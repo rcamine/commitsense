@@ -1,75 +1,51 @@
 # CommitSense
 
-A CLI tool that generates meaningful commit messages using OpenAI.
+> Generate meaningful commit messages using OpenAI
+
+CommitSense is a command-line tool that analyzes your staged git changes and generates clear, conventional commit messages using OpenAI.
+
+## Prerequisites
+
+- Git
+- .NET 8.0 Runtime
+- OpenAI API key
 
 ## Installation
-
-### As a .NET CLI Tool
 
 ```bash
 dotnet tool install --global commitsense
 ```
 
-### As a Self-Contained Executable
-
-Download the appropriate package for your platform from the [releases](https://github.com/yourusername/commitsense/releases) page:
-
-- Windows: `commitsense-windows-x64.zip`
-- Linux: `commitsense-linux-x64.tar.gz`
-- macOS: `commitsense-macos-x64.tar.gz`
-
-### Development
-
-To run the tool during development:
-
-```bash
-# Show help
-dotnet run -- --help
-
-# Show version
-dotnet run -- --version
-
-# Use with API key
-dotnet run -- --api-key sk-...
-```
-
 ## Usage
 
-### Command Line Options
-
 ```bash
-# Show help
-commitsense --help
-commitsense -h
+# Using command line argument
+commitsense --api-key your_api_key_here
 
-# Show version
-commitsense --version
-commitsense -v
-
-# Use with API key
-commitsense --api-key sk-...
-
-# Use with environment variable
-export OPENAI_API_KEY=sk-...
+# Using environment variable
+export OPENAI_API_KEY=your_api_key_here
 commitsense
 ```
 
-### Environment Variables
+## Options
 
-- `OPENAI_API_KEY`: Your OpenAI API key (alternative to --api-key)
+- `--api-key <key>` - Set OpenAI API key
+- `--help, -h` - Show help message
+- `--version, -v` - Show version information
 
-## Features
+## Development
 
-- Generates meaningful commit messages based on staged changes
-- Supports conventional commit format
-- Interactive confirmation before committing
-- Cross-platform support (Windows, Linux, macOS)
+```bash
+# Clone the repository
+git clone https://github.com/yourusername/commitsense.git
+cd commitsense
 
-## Requirements
+# Build the project
+dotnet build
 
-- Git
-- OpenAI API key
-- .NET 8.0 Runtime (if using self-contained executable)
+# Run in development
+dotnet run -- --help
+```
 
 ## License
 
