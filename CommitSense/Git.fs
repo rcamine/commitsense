@@ -40,13 +40,10 @@ module Git =
                 CreateNoWindow = true
             )
 
-
         use proc = new Process(StartInfo = startInfo)
         proc.Start() |> ignore
-
-        let error = proc.StandardError.ReadToEnd()
 
         proc.WaitForExit()
 
         if proc.ExitCode <> 0 then
-            failwith $"Git commit failed with exit code {proc.ExitCode}. Error: {error}"
+            failwith $"Git commit failed with exit code {proc.ExitCode}."
