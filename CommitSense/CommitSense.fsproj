@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,8 +10,8 @@
     <Authors>Your Name</Authors>
     <Description>A CLI tool that generates meaningful commit messages using OpenAI</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/yourusername/commitsense</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/yourusername/commitsense</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/rcamine/commitsense</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/rcamine/commitsense</RepositoryUrl>
     <PackageTags>git,commit,openai,cli</PackageTags>
   </PropertyGroup>
 
@@ -23,12 +24,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="OpenAI" Version="1.7.2" />
-    <PackageReference Include="Spectre.Console" Version="0.48.0" />
+    <Compile Include="Arguments.fs" />
+    <Compile Include="Git.fs" />
+    <Compile Include="AIService.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="Program.fs" />
+    <PackageReference Include="Argu" Version="6.2.5" />
+    <PackageReference Include="OpenAI" Version="1.7.2" />
+    <PackageReference Include="Spectre.Console" Version="0.48.0" />
   </ItemGroup>
 
 </Project>
