@@ -55,7 +55,7 @@ $PROFILE
 ## Development
 
 ```bash
-git clone https://github.com/yourusername/commitsense.git
+git clone https://github.com/rcamine/commitsense.git
 cd commitsense
 dotnet build
 dotnet run -- --help
