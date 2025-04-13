@@ -5,22 +5,17 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <RootNamespace>CommitSense</RootNamespace>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <PackageId>commitsense</PackageId>
-    <Authors>Your Name</Authors>
+    <Authors>rcamine</Authors>
     <Description>A CLI tool that generates meaningful commit messages using OpenAI</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/rcamine/commitsense</PackageProjectUrl>
     <RepositoryUrl>https://github.com/rcamine/commitsense</RepositoryUrl>
     <PackageTags>git,commit,openai,cli</PackageTags>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <PublishSingleFile>true</PublishSingleFile>
-    <SelfContained>true</SelfContained>
-    <PublishReadyToRun>true</PublishReadyToRun>
-    <PublishTrimmed>true</PublishTrimmed>
-    <RuntimeIdentifiers>win-x64;linux-x64;osx-x64</RuntimeIdentifiers>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>commitsense</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
   </PropertyGroup>
 
   <ItemGroup>
@@ -34,6 +29,10 @@
     <PackageReference Include="Argu" Version="6.2.5" />
     <PackageReference Include="OpenAI" Version="1.7.2" />
     <PackageReference Include="Spectre.Console" Version="0.48.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
 </Project>

@@ -52,15 +52,12 @@ module Program =
         AnsiConsole.Write(panel)
         AnsiConsole.Confirm "Do you want to commit with this message?"
 
-    let private showVersion () =
-        AnsiConsole.MarkupLine "CommitSense version is [green]1.0.0[/]."
-
     let private handleUsageRequest (parser: ArgumentParser<CliArgument>) =
         parser.PrintUsage() |> printfn "%s"
         Ok()
 
     let private handleVersionRequest () =
-        showVersion ()
+        AnsiConsole.MarkupLine "CommitSense version is [green]1.1.0[/]."
         Ok()
 
     let private getApiKey (results: ParseResults<CliArgument>) context =
